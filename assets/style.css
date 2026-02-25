@@ -89,12 +89,8 @@ body {
 	width: 80%;
 	font-size: 14px;
 }
-.carousel-inner {
-	background-color: #000;
-}
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    filter: drop-shadow(0 0 2px rgba(0, 0, 0, 1));
+.carousel-control-label {
+	color: #000;
 }
 #gallery {
 	/*	min-height: 100vh; */
