@@ -144,9 +144,11 @@
           index = i;
         }
       });
-      next =
-        imagesCollection[index] ||
-        imagesCollection[imagesCollection.length - 1];
+      let prevIndex = index - 1;
+      if (prevIndex < 0) {
+        prevIndex = imagesCollection.length - 1;
+      }
+      next = imagesCollection[prevIndex];
       $(".lightboxImage").attr("src", $(next).attr("src"));
     },
     nextImage() {
@@ -179,7 +181,11 @@
           index = i;
         }
       });
-      next = imagesCollection[index] || imagesCollection[0];
+      let nextIndex = index + 1;
+      if (nextIndex >= imagesCollection.length) {
+        nextIndex = 0;
+      }
+      next = imagesCollection[nextIndex];
       $(".lightboxImage").attr("src", $(next).attr("src"));
       console.log("Index trouvé :", index);
       next = imagesCollection[index] || imagesCollection[0];
@@ -230,7 +236,7 @@
         return;
       }
       $(".active-tag").removeClass("active active-tag");
-      $(this).addClass("active-tag");
+      $(this).addClass("active active-tag");
 
       var tag = $(this).data("images-toggle");
 
