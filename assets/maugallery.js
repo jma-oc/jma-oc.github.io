@@ -187,9 +187,6 @@
       }
       next = imagesCollection[nextIndex];
       $(".lightboxImage").attr("src", $(next).attr("src"));
-      console.log("Index trouvé :", index);
-      next = imagesCollection[index] || imagesCollection[0];
-      console.log("Source de l'image suivante :", $(next).attr("src"));
     },
     createLightBox(gallery, lightboxId, navigation) {
       gallery.append(`<div class="modal fade" id="${
